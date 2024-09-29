@@ -80,6 +80,9 @@ public partial class EarlyMulticellularEditor : EditorBase<EditorAction, Microbe
     public Patch CurrentPatch => patchMapTab.CurrentPatch;
 
     [JsonIgnore]
+    public Patch? TargetPatch => patchMapTab.TargetPatch;
+
+    [JsonIgnore]
     public Patch? SelectedPatch => patchMapTab.SelectedPatch;
 
     [JsonIgnore]
@@ -96,7 +99,13 @@ public partial class EarlyMulticellularEditor : EditorBase<EditorAction, Microbe
 
     public void SendAutoEvoResultsToReportComponent()
     {
-        reportTab.UpdateAutoEvoResults(autoEvoSummary?.ToString() ?? "error", autoEvoExternal?.ToString() ?? "error");
+        if (autoEvoResults == null)
+        {
+            GD.PrintErr("Unexpectedly missing auto-evo results");
+            return;
+        }
+
+        reportTab.UpdateAutoEvoResults(autoEvoResults, autoEvoExternal?.ToString() ?? "error");
     }
 
     public override void SetEditorObjectVisibility(bool shown)
@@ -110,8 +119,6 @@ public partial class EarlyMulticellularEditor : EditorBase<EditorAction, Microbe
     public void OnCurrentPatchUpdated(Patch patch)
     {
         cellEditorTab.OnCurrentPatchUpdated(patch);
-
-        reportTab.UpdatePatchDetails(patch);
 
         cellEditorTab.UpdateBackgroundImage(patch.BiomeTemplate);
     }
@@ -203,7 +210,7 @@ public partial class EarlyMulticellularEditor : EditorBase<EditorAction, Microbe
 
             reportTab.UpdateTimeIndicator(CurrentGame.GameWorld.TotalPassedTime);
 
-            reportTab.UpdatePatchDetails(CurrentPatch, patchMapTab.SelectedPatch);
+            reportTab.UpdatePatchDetails(CurrentPatch, TargetPatch);
         }
 
         cellEditorTab.UpdateBackgroundImage(CurrentPatch.BiomeTemplate);
@@ -223,8 +230,6 @@ public partial class EarlyMulticellularEditor : EditorBase<EditorAction, Microbe
         {
             editorComponent.Init(this, fresh);
         }
-
-        patchMapTab.OnSelectedPatchChanged = OnSelectPatchForReportTab;
     }
 
     protected override void OnEnterEditor()
@@ -255,20 +260,19 @@ public partial class EarlyMulticellularEditor : EditorBase<EditorAction, Microbe
 
         if (run.Results == null)
         {
-            reportTab.UpdateAutoEvoResults(Localization.Translate("AUTO_EVO_FAILED"),
-                Localization.Translate("AUTO_EVO_RUN_STATUS") + " " + run.Status);
+            reportTab.DisplayAutoEvoFailure(run.Status);
         }
 
         base.OnEditorReady();
 
         reportTab.UpdateTimeIndicator(CurrentGame.GameWorld.TotalPassedTime);
 
-        if (autoEvoSummary != null && autoEvoExternal != null)
+        if (autoEvoResults != null && autoEvoExternal != null)
         {
-            reportTab.UpdateAutoEvoResults(autoEvoSummary.ToString(), autoEvoExternal.ToString());
+            reportTab.UpdateAutoEvoResults(autoEvoResults, autoEvoExternal.ToString());
         }
 
-        reportTab.UpdatePatchDetails(CurrentPatch, patchMapTab.SelectedPatch);
+        reportTab.UpdatePatchDetails(CurrentPatch, TargetPatch);
     }
 
     protected override void OnUndoPerformed()
@@ -327,6 +331,7 @@ public partial class EarlyMulticellularEditor : EditorBase<EditorAction, Microbe
             {
                 reportTab.Show();
                 SetEditorObjectVisibility(false);
+                reportTab.UpdatePatchDetailsIfNeeded(SelectedPatch ?? CurrentPatch);
                 break;
             }
 
@@ -422,11 +427,6 @@ public partial class EarlyMulticellularEditor : EditorBase<EditorAction, Microbe
         }
 
         base.Dispose(disposing);
-    }
-
-    private void OnSelectPatchForReportTab(Patch patch)
-    {
-        reportTab.UpdatePatchDetails(patch, patch);
     }
 
     private void OnStartEditingCellType(string? name, bool switchTab)

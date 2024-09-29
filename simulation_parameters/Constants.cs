@@ -167,6 +167,11 @@ public static class Constants
     public const float CLOUD_CHEAT_DENSITY = 16000.0f;
 
     public const int MEMBRANE_RESOLUTION = 10;
+    public const int MEMBRANE_VERTICAL_RESOLUTION = 7;
+    public const float MEMBRANE_HEIGHT_MULTIPLIER = 1.0f;
+
+    public const float MEMBRANE_SMOOTHING_POWER = 3.0f;
+    public const float MEMBRANE_SIDE_ROUNDING = 20.0f;
 
     public const float MEMBRANE_ROOM_FOR_ORGANELLES = 1.9f;
     public const float MEMBRANE_NUMBER_OF_WAVES = 9.0f;
@@ -214,7 +219,17 @@ public static class Constants
 
     public const float FLAGELLA_ENERGY_COST = 6.0f;
 
-    public const float FLAGELLA_BASE_FORCE = 35.0f;
+    public const float FLAGELLA_BASE_FORCE = 20.0f;
+
+    public const float FLAGELLA_MAX_UPGRADE_LENGHT = 3;
+    public const float FLAGELLA_MIN_UPGRADE_LENGHT = -1;
+
+    public const float FLAGELLA_MAX_UPGRADE_FORCE = 15.0f;
+
+    public const float FLAGELLA_MAX_UPGRADE_ATP_USAGE = 4.0f;
+
+    public const float FLAGELLA_MAX_UPGRADE_VISUAL_LENGTH = 0.40f;
+    public const float FLAGELLA_MIN_UPGRADE_VISUAL_LENGTH = 0.80f;
 
     /// <summary>
     ///   As eukaryotes are immediately 50% larger they get a movement force increase to offset that
@@ -320,8 +335,8 @@ public static class Constants
     public const float PREFER_DESPAWN_PLAYER_REPRODUCED_COPY_AFTER = 0.30f;
 
     /// <summary>
-    ///   Multiplier for how much cells in a colony contribute to the entity limit. Actually colonies seem quite a bit
-    ///   heavier than normal microbes, as such this is set pretty high.
+    ///   Multiplier for how much individual cells in a colony contribute to the entity limit. Actually colonies seem
+    ///   quite a bit heavier than normal microbes, as such this is set pretty high.
     /// </summary>
     public const float MICROBE_COLONY_MEMBER_ENTITY_WEIGHT_MULTIPLIER = 0.95f;
 
@@ -336,7 +351,7 @@ public static class Constants
     /// <summary>
     ///   The maximum force that can be applied by currents in the fluid system
     /// </summary>
-    public const float MAX_FORCE_APPLIED_BY_CURRENTS = 5.25f;
+    public const float MAX_FORCE_APPLIED_BY_CURRENTS = 1200;
 
     public const int TRANSLATION_VERY_INCOMPLETE_THRESHOLD = 30;
     public const int TRANSLATION_INCOMPLETE_THRESHOLD = 70;
@@ -788,12 +803,12 @@ public static class Constants
     /// <summary>
     ///   The speed of which a cell can absorb compounds from digestible engulfed objects.
     /// </summary>
-    public const float ENGULF_COMPOUND_ABSORBING_PER_SECOND = 0.5f;
+    public const float ENGULF_COMPOUND_ABSORBING_PER_SECOND = 0.3f;
 
     /// <summary>
-    ///   How much compounds a cell can absorb per second from digestible engulfed objects.
+    ///   How much compounds in relation to real compound amount can be absorbed from digestible engulfed objects.
     /// </summary>
-    public const float ENGULF_BASE_COMPOUND_ABSORPTION_YIELD = 0.3f;
+    public const float ENGULF_BASE_COMPOUND_ABSORPTION_YIELD = 0.5f;
 
     /// <summary>
     ///   How long can cell be in engulf mode after activating without ATP
@@ -839,7 +854,7 @@ public static class Constants
 
     public const float OPTIMAL_THERMOPLAST_TEMPERATURE = 100.0f;
 
-    public const float ADDITIONAL_DIGESTIBLE_GLUCOSE_AMOUNT_MULTIPLIER = 0.25f;
+    public const float ADDITIONAL_DIGESTIBLE_GLUCOSE_AMOUNT_MULTIPLIER = 1.25f;
 
     public const string LYSOSOME_DEFAULT_ENZYME_NAME = "lipase";
 
@@ -970,7 +985,7 @@ public static class Constants
     public const float CHEMORECEPTOR_AMOUNT_MAX = 5000;
     public const float CHEMORECEPTOR_AMOUNT_DEFAULT = 100;
     public const float CHEMORECEPTOR_SEARCH_UPDATE_INTERVAL = 0.25f;
-    public const string CHEMORECEPTOR_DEFAULT_COMPOUND_NAME = "glucose";
+    public const Compound CHEMORECEPTOR_DEFAULT_COMPOUND = Compound.Glucose;
 
     /// <summary>
     ///   Size, in radians, of the gaps between directions the chemoreceptor checks for compounds
@@ -996,6 +1011,8 @@ public static class Constants
 
     public const float MIN_OPACITY_CHITIN = 0.4f;
     public const float MAX_OPACITY_CHITIN = 1.2f;
+
+    public const float ORGANELLE_TINT_STRENGTH = 0.1f;
 
     // Min Opacity Mutation
     public const float MIN_OPACITY_MUTATION = -0.01f;
@@ -1350,8 +1367,6 @@ public static class Constants
     public const float GUI_FOCUS_GRABBER_PROCESS_INTERVAL = 0.1f;
     public const float GUI_FOCUS_SETTER_PROCESS_INTERVAL = 0.2f;
 
-    public const string BUILD_INFO_FILE = "res://simulation_parameters/revision.json";
-
     public const string PHYSICS_DUMP_PATH = LOGS_FOLDER + "/physics_dump.bin";
 
     public const bool VERBOSE_SIMULATION_PARAMETER_LOADING = false;
@@ -1470,6 +1485,8 @@ public static class Constants
 
     public const string MOD_INFO_FILE_NAME = "thrive_mod.json";
 
+    public const int MEMBRANE_RENDER_PRIORITY = 20;
+
     /// <summary>
     ///   Minimum hex distance before the same render priority.
     /// </summary>
@@ -1524,14 +1541,6 @@ public static class Constants
     ///   If set to true then physics debug draw gets enabled when the game starts
     /// </summary>
     public const bool AUTOMATICALLY_TURN_ON_PHYSICS_DEBUG_DRAW = false;
-
-    /// <summary>
-    ///   How far away from the world origin debug draw works. When farther away no debug drawing happens. Setting this
-    ///   too far seems to trigger a problem in Godot where a grey overlay is over all 3D content blocking everything.
-    ///   TODO: if we need bigger worlds then the <see cref="DebugDrawer"/> will need to be updated to reposition its
-    ///   meshes to get a smaller bounding box working
-    /// </summary>
-    public const float DEBUG_DRAW_MAX_DISTANCE_ORIGIN = 1000000000;
 
     public const int CREATURE_MESH_RESOLUTION = 3;
 
@@ -1647,6 +1656,8 @@ public static class Constants
 
     public const int MAX_NEWS_FEED_ITEMS_TO_SHOW = 15;
     public const int MAX_NEWS_FEED_ITEM_LENGTH = 1000;
+
+    public const int MAX_RECENT_VERSIONS_TO_SHOW = 5;
 
     public const string CLICKABLE_TEXT_BBCODE = "[color=#3796e1]";
     public const string CLICKABLE_TEXT_BBCODE_END = "[/color]";

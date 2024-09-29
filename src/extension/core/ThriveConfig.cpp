@@ -1,11 +1,38 @@
 // ------------------------------------ //
 #include "ThriveConfig.hpp"
 
+#include <godot_cpp/core/class_db.hpp>
+#include <godot_cpp/variant/utility_functions.hpp>
+
+#include "nodes/DebugDrawer.hpp"
+#include "physics/DebugDrawForwarder.hpp"
+
 // ------------------------------------ //
 namespace Thrive
 {
 
 constexpr int INIT_MAGIC = 765442;
+
+ThriveConfig* ThriveConfig::instance = nullptr;
+
+DebugDrawer* activeDrawerInstance = nullptr;
+
+void ForwardLines(const std::vector<std::tuple<JPH::RVec3Arg, JPH::RVec3Arg, JPH::Float4>>& lineBuffer) noexcept
+{
+    if (activeDrawerInstance == nullptr)
+        return;
+
+    activeDrawerInstance->OnReceiveLines(lineBuffer);
+}
+
+void ForwardTriangles(
+    const std::vector<std::tuple<JPH::RVec3Arg, JPH::RVec3Arg, JPH::RVec3Arg, JPH::Float4>>& triangleBuffer) noexcept
+{
+    if (activeDrawerInstance == nullptr)
+        return;
+
+    activeDrawerInstance->OnReceiveTriangles(triangleBuffer);
+}
 
 int InitValueLocation = -1;
 
@@ -38,10 +65,14 @@ bool ThriveConfig::ReportOtherVersions(int csharpVersion, int nativeLibraryVersi
 
     if (nativeLibraryVersion != THRIVE_LIBRARY_VERSION)
     {
-        ERR_PRINT("This Thrive GDExtension version was compiled against Thrive native version " +
-            godot::String::num_int64(THRIVE_LIBRARY_VERSION) +
-            " but it is now tried to be used with version: " + godot::String::num_int64(nativeLibraryVersion));
-        return false;
+        // We'll try to be forward compatible, so just check if the native library is too old
+        if (nativeLibraryVersion < THRIVE_LIBRARY_VERSION)
+        {
+            ERR_PRINT("This Thrive GDExtension version was compiled against Thrive native version " +
+                godot::String::num_int64(THRIVE_LIBRARY_VERSION) +
+                " but it is now tried to be used with version: " + godot::String::num_int64(nativeLibraryVersion));
+            return false;
+        }
     }
 
     return true;
@@ -55,16 +86,22 @@ ThriveConfig* ThriveConfig::InitializeImplementation(NativeLibIntercommunication
         return nullptr;
     }
 
-    if (false)
+    // This is kept for when there's more complex initialization
+    /*if (false)
     {
         ERR_PRINT("ThriveConfig object initialization failed");
         return nullptr;
-    }
+    }*/
 
     // Init succeeded
     initialized = true;
     InitValueLocation = INIT_MAGIC;
+    instance = this;
 
+    // Store for later accessing
+    storedIntercommunication = &intercommunication;
+
+    godot::UtilityFunctions::print("Thrive GDExtension initialized successfully");
     return this;
 }
 
@@ -77,7 +114,7 @@ godot::Variant ThriveConfig::Initialize(const godot::Variant& intercommunication
     }
 
     const auto convertedIntercommunication =
-        reinterpret_cast<NativeLibIntercommunication*>((int64_t)intercommunication);
+        reinterpret_cast<NativeLibIntercommunication*>(static_cast<int64_t>(intercommunication));
 
     if (convertedIntercommunication == nullptr)
     {
@@ -96,8 +133,43 @@ bool ThriveConfig::Shutdown() noexcept
         return false;
     }
 
+    instance = nullptr;
     initialized = false;
     return true;
+}
+
+// ------------------------------------ //
+
+bool ThriveConfig::IsDebugDrawSupported() const noexcept
+{
+    if (!storedIntercommunication)
+    {
+        ERR_PRINT("ThriveConfig not initialized (missing intercommunication)");
+        return false;
+    }
+
+    return storedIntercommunication->PhysicsDebugSupported;
+}
+
+void ThriveConfig::RegisterDebugDrawReceiver(DebugDrawer* drawer) noexcept
+{
+    if (!storedIntercommunication)
+    {
+        ERR_PRINT("ThriveConfig not initialized (missing intercommunication)");
+        return;
+    }
+
+    if (drawer == nullptr)
+    {
+        storedIntercommunication->DebugLineReceiver = nullptr;
+        storedIntercommunication->DebugTriangleReceiver = nullptr;
+        activeDrawerInstance = nullptr;
+        return;
+    }
+
+    activeDrawerInstance = drawer;
+    storedIntercommunication->DebugLineReceiver = ForwardLines;
+    storedIntercommunication->DebugTriangleReceiver = ForwardTriangles;
 }
 
 // ------------------------------------ //

@@ -59,6 +59,16 @@ int32_t InitThriveLibrary()
     // Start up the task system
     Thrive::TaskSystem::Get();
 
+#ifdef JPH_DEBUG_RENDERER
+    Thrive::IntercommunicationManager::Get().ReportDebugDrawWorks();
+
+    auto& communication = Thrive::IntercommunicationManager::Get().GetIntercommunicationObjectModifiable();
+
+    Thrive::Physics::DebugDrawForwarder::GetInstance().SetOutputLineReceiver(&communication.DebugLineReceiver);
+    Thrive::Physics::DebugDrawForwarder::GetInstance().SetOutputTriangleReceiver(&communication.DebugTriangleReceiver);
+
+#endif
+
     LOG_DEBUG("Native library init succeeded");
     return 0;
 }
@@ -74,6 +84,10 @@ void ShutdownThriveLibrary()
     JPH::Factory::sInstance = nullptr;
 
     Thrive::TaskSystem::Get().Shutdown();
+
+#ifdef JPH_DEBUG_RENDERER
+    Thrive::Physics::DebugDrawForwarder::GetInstance().ClearOutputReceivers();
+#endif
 
     SetLogForwardingCallback(nullptr);
 }
@@ -281,17 +295,18 @@ void ReadPhysicsBodyVelocity(
 
 #pragma clang diagnostic pop
 
-void GiveImpulse(PhysicalWorld* physicalWorld, PhysicsBody* body, JVecF3 impulse)
+void GiveImpulse(PhysicalWorld* physicalWorld, PhysicsBody* body, JVecF3 impulse, bool autoActivate)
 {
     reinterpret_cast<Thrive::Physics::PhysicalWorld*>(physicalWorld)
-        ->GiveImpulse(reinterpret_cast<Thrive::Physics::PhysicsBody*>(body)->GetId(), Thrive::Vec3FromCAPI(impulse));
+        ->GiveImpulse(reinterpret_cast<Thrive::Physics::PhysicsBody*>(body)->GetId(), Thrive::Vec3FromCAPI(impulse),
+            autoActivate);
 }
 
-void GiveAngularImpulse(PhysicalWorld* physicalWorld, PhysicsBody* body, JVecF3 angularImpulse)
+void GiveAngularImpulse(PhysicalWorld* physicalWorld, PhysicsBody* body, JVecF3 angularImpulse, bool autoActivate)
 {
     reinterpret_cast<Thrive::Physics::PhysicalWorld*>(physicalWorld)
-        ->GiveAngularImpulse(
-            reinterpret_cast<Thrive::Physics::PhysicsBody*>(body)->GetId(), Thrive::Vec3FromCAPI(angularImpulse));
+        ->GiveAngularImpulse(reinterpret_cast<Thrive::Physics::PhysicsBody*>(body)->GetId(),
+            Thrive::Vec3FromCAPI(angularImpulse), autoActivate);
 }
 
 void SetBodyControl(
@@ -334,25 +349,26 @@ void SetBodyPositionAndRotation(
             Thrive::DVec3FromCAPI(position), Thrive::QuatFromCAPI(rotation), activate);
 }
 
-void SetBodyVelocity(PhysicalWorld* physicalWorld, PhysicsBody* body, JVecF3 velocity)
+void SetBodyVelocity(PhysicalWorld* physicalWorld, PhysicsBody* body, JVecF3 velocity, bool autoActivate)
 {
     reinterpret_cast<Thrive::Physics::PhysicalWorld*>(physicalWorld)
-        ->SetVelocity(reinterpret_cast<Thrive::Physics::PhysicsBody*>(body)->GetId(), Thrive::Vec3FromCAPI(velocity));
+        ->SetVelocity(reinterpret_cast<Thrive::Physics::PhysicsBody*>(body)->GetId(), Thrive::Vec3FromCAPI(velocity),
+            autoActivate);
 }
 
-void SetBodyAngularVelocity(PhysicalWorld* physicalWorld, PhysicsBody* body, JVecF3 angularVelocity)
+void SetBodyAngularVelocity(PhysicalWorld* physicalWorld, PhysicsBody* body, JVecF3 angularVelocity, bool autoActivate)
 {
     reinterpret_cast<Thrive::Physics::PhysicalWorld*>(physicalWorld)
-        ->SetAngularVelocity(
-            reinterpret_cast<Thrive::Physics::PhysicsBody*>(body)->GetId(), Thrive::Vec3FromCAPI(angularVelocity));
+        ->SetAngularVelocity(reinterpret_cast<Thrive::Physics::PhysicsBody*>(body)->GetId(),
+            Thrive::Vec3FromCAPI(angularVelocity), autoActivate);
 }
 
 void SetBodyVelocityAndAngularVelocity(
-    PhysicalWorld* physicalWorld, PhysicsBody* body, JVecF3 velocity, JVecF3 angularVelocity)
+    PhysicalWorld* physicalWorld, PhysicsBody* body, JVecF3 velocity, JVecF3 angularVelocity, bool autoActivate)
 {
     reinterpret_cast<Thrive::Physics::PhysicalWorld*>(physicalWorld)
         ->SetVelocityAndAngularVelocity(reinterpret_cast<Thrive::Physics::PhysicsBody*>(body)->GetId(),
-            Thrive::Vec3FromCAPI(velocity), Thrive::Vec3FromCAPI(angularVelocity));
+            Thrive::Vec3FromCAPI(velocity), Thrive::Vec3FromCAPI(angularVelocity), autoActivate);
 }
 
 void SetBodyAllowSleep(PhysicalWorld* physicalWorld, PhysicsBody* body, bool allowSleep)
@@ -675,40 +691,6 @@ int32_t GetNativeExecutorThreads()
 }
 
 // ------------------------------------ //
-bool SetDebugDrawerCallbacks(OnLineDraw lineDraw, OnTriangleDraw triangleDraw)
-{
-#ifdef JPH_DEBUG_RENDERER
-    if (!lineDraw || !triangleDraw)
-    {
-        DisableDebugDrawerCallbacks();
-        return false;
-    }
-
-    auto& instance = Thrive::Physics::DebugDrawForwarder::GetInstance();
-
-    instance.SetOutputLineReceiver([lineDraw](JPH::RVec3Arg from, JPH::RVec3Arg to, JPH::Float4 colour)
-        { lineDraw(Thrive::DVec3ToCAPI(from), Thrive::DVec3ToCAPI(to), Thrive::ColorToCAPI(colour)); });
-
-    instance.SetOutputTriangleReceiver(
-        [triangleDraw](JPH::RVec3Arg v1, JPH::RVec3Arg v2, JPH::RVec3Arg v3, JPH::Float4 colour)
-        {
-            triangleDraw(
-                Thrive::DVec3ToCAPI(v1), Thrive::DVec3ToCAPI(v2), Thrive::DVec3ToCAPI(v3), Thrive::ColorToCAPI(colour));
-        });
-    return true;
-#else
-    UNUSED(lineDraw);
-    UNUSED(triangleDraw);
-    return false;
-#endif
-}
-
-void DisableDebugDrawerCallbacks()
-{
-#ifdef JPH_DEBUG_RENDERER
-    Thrive::Physics::DebugDrawForwarder::GetInstance().ClearOutputReceivers();
-#endif
-}
 
 #pragma clang diagnostic pop
 

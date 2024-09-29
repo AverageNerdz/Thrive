@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-09-06 15:01+0300\n"
-"PO-Revision-Date: 2024-06-19 00:11+0000\n"
-"Last-Translator: Guno haozheum <guhaozhe@hsefz.cn>\n"
-"Language-Team: Chinese (Simplified) <https://translate.revolutionarygamesstudio.com/projects/thrive/thrive-game/zh_Hans/>\n"
+"POT-Creation-Date: 2024-09-24 12:59+0300\n"
+"PO-Revision-Date: 2024-09-20 12:56+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified Han script) <https://translate.revolutionarygamesstudio.com/projects/thrive/thrive-game/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.7.2\n"
 "Generated-By: Babel 2.8.0\n"
 
 msgid "2D_MOVEMENT_TYPE_SELECTION"
@@ -40,6 +40,10 @@ msgstr "中止"
 msgid "ABORTED_DOT"
 msgstr "已中止。"
 
+#, fuzzy
+msgid "ABSORBERS_COUNT"
+msgstr "微生物计数："
+
 msgid "ABYSSOPELAGIC"
 msgstr "深海带"
 
@@ -59,13 +63,13 @@ msgid "ACTION_DELETE"
 msgstr "删除"
 
 msgid "ACTION_DOUBLE_POPULATION"
-msgstr "使人口加倍"
+msgstr "使种群数量加倍"
 
 msgid "ACTION_DUPLICATE_UNITS"
 msgstr "复制单位"
 
 msgid "ACTION_HALF_POPULATION"
-msgstr "使人口减半"
+msgstr "使种群数量减半"
 
 msgid "ACTION_TELEPORT"
 msgstr "传送"
@@ -93,8 +97,16 @@ msgstr "高级"
 msgid "ADVANCED_VIEW_BUTTON_TOOLTIP"
 msgstr "打开高级菜单"
 
+#, fuzzy
+msgid "AEROBIC_NITROGEN_FIXATION"
+msgstr "无氧固氨"
+
 msgid "AEROBIC_NITROGEN_FIXING"
 msgstr "有氧固氮"
+
+#, fuzzy
+msgid "AEROBIC_RESPIRATION"
+msgstr "有氧呼吸作用"
 
 msgid "AGENTS"
 msgstr "化学剂"
@@ -264,7 +276,7 @@ msgid "AUTO"
 msgstr "自动"
 
 msgid "AUTO-EVO_EXPLANATION_EXPLANATION"
-msgstr "这个板块显示了auto-evo预测工作所依据的数字。一个物种能够捕获的总能量以及该物种个体的成本决定最终的人口。Auto-evo使用一个简化的现实模型，根据物种能够采集的能量来计算其表现如何。对于每个食物来源，它显示了该物种从其获得的能量以及该食物来源能提供的总能量。物种从总能量中获得的量基于与总适应性相比的适应性的大小。适应性是衡量该物种对该食物来源的利用程度的指标。"
+msgstr "这个板块显示了auto-evo预测工作所依据的数字。一个物种能够捕获的总能量以及该物种个体的成本决定最终的种群数量。Auto-evo使用一个简化的现实模型，根据物种能够采集的能量来计算其表现如何。对于每个食物来源，它显示了该物种从其获得的能量以及该食物来源能提供的总能量。物种从总能量中获得的量基于与总适应性相比的适应性的大小。适应性是衡量该物种对该食物来源的利用程度的指标。"
 
 msgid "AUTO-EVO_POPULATION_CHANGED_2"
 msgstr "{0}在{2}中的种群数量变化了{1}，原因：{3}"
@@ -292,7 +304,18 @@ msgstr "Auto-Evo探索工具"
 msgid "AUTO_EVO_FAILED"
 msgstr "Auto-evo未能正常运行"
 
+msgid "AUTO_EVO_MISSING_RESULT_DATA_OBJECT"
+msgstr ""
+
 msgid "AUTO_EVO_RESULTS"
+msgstr "Auto-evo结果："
+
+#, fuzzy
+msgid "AUTO_EVO_RESULTS_GLOBAL_TITLE"
+msgstr "Auto-evo结果："
+
+#, fuzzy
+msgid "AUTO_EVO_RESULTS_PATCH_TITLE"
 msgstr "Auto-evo结果："
 
 msgid "AUTO_EVO_RUN_STATUS"
@@ -328,6 +351,10 @@ msgstr "反斜杠"
 msgid "BACKSPACE"
 msgstr "退格键"
 
+#, fuzzy
+msgid "BACTERIAL_THERMOSYNTHESIS"
+msgstr "热合成"
+
 msgid "BALANCE_DISPLAY_AT_DAY_ALWAYS"
 msgstr "以白天计算"
 
@@ -362,7 +389,7 @@ msgid "BECOME_MULTICELLULAR"
 msgstr "成为多细胞（{0}/{1}）"
 
 msgid "BEGIN_THRIVING"
-msgstr "开始游戏"
+msgstr "开启繁荣之路"
 
 msgid "BEHAVIOUR"
 msgstr "行为"
@@ -580,6 +607,10 @@ msgstr "化学感知是细胞的视觉。是细胞获得有关其周围环境信
 msgid "CHEMORECEPTOR_PROCESSES_DESCRIPTION"
 msgstr "化学感受器可以从更远的地方探测到化合物。放置后可以修改，以选择化合物类型和引导线颜色。"
 
+#, fuzzy
+msgid "CHEMOSYNTHESIS"
+msgstr "化学合成"
+
 msgid "CHEMOSYNTHESIZING_PROTEINS"
 msgstr "化学合成蛋白"
 
@@ -638,7 +669,7 @@ msgid "CILIA_PROCESSES_DESCRIPTION"
 msgstr "增加大体型细胞的转向速度。"
 
 msgid "CITY_SHORT_STATISTICS"
-msgstr "人口：{0} 食物：{1} 科学：{2}"
+msgstr "种群数量：{0} 食物：{1} 科学：{2}"
 
 msgid "CLEAN_UP_OLD_SAVES"
 msgstr "清除旧存档"
@@ -649,11 +680,19 @@ msgstr "关闭"
 msgid "CLOSE_OPTIONS"
 msgstr "关闭选项菜单？"
 
+#, fuzzy
+msgid "CLOUD_BENCHMARK"
+msgstr "微生物编辑器"
+
 msgid "CLOUD_RESOLUTION_DIVISOR"
 msgstr "云分辨率除数："
 
 msgid "CLOUD_SIMULATION_MINIMUM_INTERVAL"
 msgstr "云仿真最小间隔时间："
+
+#, fuzzy
+msgid "CLOUD_SIMULATION_MULTIPLIER"
+msgstr "渗透调节消耗系数"
 
 msgid "COASTAL"
 msgstr "海岸"
@@ -773,6 +812,10 @@ msgstr ""
 msgid "COMPOUND_CLOUDS"
 msgstr "化合物云"
 
+#, fuzzy
+msgid "COMPOUND_CLOUD_BENCHMARK"
+msgstr "化合物云密度"
+
 msgid "COMPOUND_CLOUD_DENSITY"
 msgstr "化合物云密度"
 
@@ -869,7 +912,7 @@ msgid "CONTINUE"
 msgstr "继续游戏"
 
 msgid "CONTINUE_AS_SPECIES"
-msgstr "[center]游戏还未结束， 您可以通过转变到物种 {0}，种群数量为 {1} 以[b]继续游戏[/b][/center]."
+msgstr "[center]游戏还未结束， 您可以通过转变到物种 {0}，种群数量为 {1} 以[b]继续游戏[/b]。[/center]"
 
 msgid "CONTINUE_THRIVING"
 msgstr "继续游戏"
@@ -1242,9 +1285,8 @@ msgstr "调试菜单"
 msgid "DECEMBER"
 msgstr "十二月"
 
-#, fuzzy
 msgid "DECREASE_ITEM_SIZE"
-msgstr "喷射黏液"
+msgstr "减小物体"
 
 msgid "DEFAULT_AUDIO_OUTPUT_DEVICE"
 msgstr "默认输出设备"
@@ -1583,8 +1625,15 @@ msgstr "（游戏中会随机生成彩蛋）"
 msgid "EDGE_PAN_SPEED"
 msgstr "旋转速度："
 
+msgid "EDITING_TITLE"
+msgstr "编辑"
+
 msgid "EDITOR"
 msgstr "编辑器"
+
+#, fuzzy
+msgid "EDITORS_AND_MUTATIONS_BUTTON"
+msgstr "发生变异"
 
 msgid "EDITOR_BUTTON_TOOLTIP"
 msgstr "进入编辑器并修改你的物种"
@@ -1607,6 +1656,10 @@ msgstr "吐出已吞噬的物体"
 
 msgid "EJECT_ENGULFED_TOOLTIP"
 msgstr "吐出已吞噬的物体"
+
+#, fuzzy
+msgid "EMITTERS_COUNT"
+msgstr "微生物计数："
 
 msgid "ENABLED_MODS"
 msgstr "启用Mod"
@@ -1697,6 +1750,9 @@ msgstr "实体标签"
 
 msgid "ENVIRONMENT"
 msgstr "环境"
+
+msgid "ENVIRONMENTAL_CONDITIONS_BUTTON"
+msgstr "环境条件"
 
 msgid "ENVIRONMENTAL_GLUCOSE_RETENTION"
 msgstr "环境葡萄糖保留"
@@ -1909,6 +1965,10 @@ msgstr "鞭毛"
 msgid "FLAGELLUM_DESCRIPTION"
 msgstr "鞭毛是一种从细胞膜伸出的鞭状蛋白纤维束，使用ATP沿一个方向起伏并推动细胞。鞭毛的位置决定其推力的方向，推力方向跟鞭毛的朝向是相反的。举例说，如果将鞭毛放在细胞的左侧，那么它就会在细胞往右侧移动时提供推力。"
 
+#, fuzzy
+msgid "FLAGELLUM_LENGTH_DESCRIPTION"
+msgstr "鞭毛是一种从细胞膜伸出的鞭状蛋白纤维束，使用ATP沿一个方向起伏并推动细胞。鞭毛的位置决定其推力的方向，推力方向跟鞭毛的朝向是相反的。举例说，如果将鞭毛放在细胞的左侧，那么它就会在细胞往右侧移动时提供推力。"
+
 msgid "FLAGELLUM_PROCESSES_DESCRIPTION"
 msgstr "使用[thrive:compound type=\"atp\"][/thrive:compound]来增加细胞的移动速度。"
 
@@ -2035,6 +2095,9 @@ msgstr "图库浏览器"
 msgid "GAME_DESIGN_TEAM"
 msgstr "游戏设计团队"
 
+msgid "GAME_SYSTEMS_TITLE"
+msgstr "游戏系统"
+
 msgid "GATHERED_ENERGY_TOOLTIP"
 msgstr ""
 "显示你的物种在全部区域收集的总预测能量和由此计算出的种群数量（在括号内）。\n"
@@ -2057,6 +2120,10 @@ msgstr "GLES3"
 
 msgid "GLOBAL_INITIAL_LETTER"
 msgstr "G"
+
+#, fuzzy
+msgid "GLOBAL_POPULATION_COLON"
+msgstr "种群数量总数："
 
 msgid "GLOBAL_TIMELINE_SPECIES_MIGRATED_TO"
 msgstr "一部分[b][u]{0}[/u][/b]种群已经从{2}移民到了{1}"
@@ -2164,11 +2231,20 @@ msgstr "{0} (x{1})"
 msgid "HYDROGEN_SULFIDE"
 msgstr "硫化氢"
 
+#, fuzzy
 msgid "ICESHARD"
 msgstr "冰砾"
 
 msgid "ICESHELF"
 msgstr "冰架"
+
+#, fuzzy
+msgid "ICE_CHUNK_BIG"
+msgstr "营养物碎块压力"
+
+#, fuzzy
+msgid "ICE_CHUNK_SMALL"
+msgstr "营养物碎块压力"
 
 msgid "ID_IS_NOT_A_NUMBER"
 msgstr "ID无效"
@@ -2176,9 +2252,8 @@ msgstr "ID无效"
 msgid "ID_NUMBER"
 msgstr "编号"
 
-#, fuzzy
 msgid "IMAGE_FILE_TYPES"
-msgstr "细胞膜类型"
+msgstr "支持的图片文件"
 
 msgid "INCLUDE_MULTICELLULAR_PROTOTYPE"
 msgstr "包含测试阶段"
@@ -2186,9 +2261,28 @@ msgstr "包含测试阶段"
 msgid "INCLUDE_MULTICELLULAR_PROTOTYPE_EXPLANATION"
 msgstr "（当你进入测试阶段，一些功能可能无法使用）"
 
-#, fuzzy
 msgid "INCREASE_ITEM_SIZE"
-msgstr "创建新的Mod"
+msgstr "放大物体"
+
+#, fuzzy
+msgid "INDICATOR_SPECIES_IS_NEW"
+msgstr "灭绝物种"
+
+#, fuzzy
+msgid "INDICATOR_SPECIES_MUTATED"
+msgstr ""
+"[b]阶段[/b]\n"
+"  微生物\n"
+"[b]膜类型[/b]\n"
+"  {0}\n"
+"[b]膜刚度[/b]\n"
+"  {1}\n"
+"[b]基础速度[/b]\n"
+"  {2}\n"
+"[b]基础转动速度[/b]\n"
+"  {3}\n"
+"[b]基础六角格大小[/b]\n"
+"  {4}"
 
 msgid "INDUSTRIAL_STAGE"
 msgstr "工业阶段"
@@ -2202,7 +2296,14 @@ msgstr "无限变异点"
 msgid "INFO_BOX_COST"
 msgstr "基础（变异点数）消耗"
 
+msgid "INFO_BOX_EDITORS"
+msgstr "编辑器"
+
 msgid "INFO_BOX_ENZYMES"
+msgstr "酶"
+
+#, fuzzy
+msgid "INFO_BOX_GAMEPLAY_TYPE"
 msgstr "酶"
 
 msgid "INFO_BOX_INTERNAL_NAME"
@@ -2211,8 +2312,14 @@ msgstr "内部名称"
 msgid "INFO_BOX_MASS"
 msgstr "质量"
 
+msgid "INFO_BOX_NEXT_STAGE"
+msgstr "下一阶段"
+
 msgid "INFO_BOX_OSMOREGULATION_COST"
 msgstr "渗透调节消耗"
+
+msgid "INFO_BOX_PREVIOUS_STAGE"
+msgstr "上一阶段"
 
 msgid "INFO_BOX_PROCESSES"
 msgstr "代谢过程"
@@ -2380,9 +2487,8 @@ msgstr "七月"
 msgid "JUNE"
 msgstr "六月"
 
-#, fuzzy
 msgid "KEEP_MIGRATION"
-msgstr "有氧呼吸作用"
+msgstr "保留更改并继续"
 
 msgid "KEY_BACK"
 msgstr "后退"
@@ -2859,6 +2965,10 @@ msgstr "不允许显示超过{0}个数据集！"
 
 msgid "MAY"
 msgstr "五月"
+
+#, fuzzy
+msgid "MECHANICS_BUTTON"
+msgstr "下凡"
 
 msgid "MEDIANEXT"
 msgstr "媒体后页"
@@ -3509,6 +3619,7 @@ msgstr "{0} 变异点"
 msgid "MUCILAGE"
 msgstr "黏液"
 
+#, fuzzy
 msgid "MUCILAGE_SYNTHESIS"
 msgstr "黏液合成"
 
@@ -3851,6 +3962,10 @@ msgstr "改变你的设置"
 msgid "ORGANELLES"
 msgstr "细胞器"
 
+#, fuzzy
+msgid "ORGANELLES_BUTTON"
+msgstr "轴突"
+
 msgid "ORGANELLES_WILL_BE_UNLOCKED_NEXT_GENERATION"
 msgstr "在进入编辑器时，解锁条件每世代只会被检查一次"
 
@@ -3908,8 +4023,16 @@ msgstr "渗透调节消耗系数"
 msgid "OSMOREGULATION_COST_MULTIPLIER_EXPLANATION"
 msgstr "（调节玩家物种渗透调节的消耗）"
 
+#, fuzzy
+msgid "OTHER_COMPOUNDS"
+msgstr "化合物"
+
 msgid "OUR_WIKI"
 msgstr "我们的Wiki"
+
+#, fuzzy
+msgid "OUTDATED_NOTICE"
+msgstr "未开始。"
 
 msgid "OUTREACH_TEAM"
 msgstr "推广团队"
@@ -3943,6 +4066,7 @@ msgstr "将[thrive:compound type=\"atp\"][/thrive:compound]转换成[thrive:comp
 msgid "OXYTOXY_NT"
 msgstr "氧化毒素"
 
+#, fuzzy
 msgid "OXYTOXY_SYNTHESIS"
 msgstr "氧化毒素合成"
 
@@ -4065,9 +4189,8 @@ msgstr "性能"
 msgid "PERFORM_UNBINDING"
 msgstr "取消连接"
 
-#, fuzzy
 msgid "PER_SECOND_ABBREVIATION"
-msgstr "{0}*10³"
+msgstr "/s"
 
 msgid "PER_SECOND_SLASH"
 msgstr "每秒"
@@ -4734,6 +4857,9 @@ msgstr "小铁块"
 msgid "SMALL_PHOSPHATE_CHUNK"
 msgstr "小磷酸盐碎块"
 
+msgid "SNOWFLAKE"
+msgstr ""
+
 msgid "SOCIETY_STAGE"
 msgstr "社会阶段"
 
@@ -5013,6 +5139,9 @@ msgstr "阳光"
 msgid "SUPPORTER_PATRONS"
 msgstr "支持者"
 
+msgid "SURVIVAL_TITLE"
+msgstr ""
+
 msgid "SWITCH_TO_FRONT_CAMERA"
 msgstr "切换到正视图"
 
@@ -5143,6 +5272,14 @@ msgstr "环境中的葡萄糖已减少到原先量的{0}。"
 
 msgid "THE_DISTURBANCE"
 msgstr "干扰"
+
+#, fuzzy
+msgid "THE_PATCH_MAP_BUTTON"
+msgstr "地区图"
+
+#, fuzzy
+msgid "THE_WORLD_TITLE"
+msgstr "世界"
 
 msgid "THIS_IS_LOCAL_MOD"
 msgstr "这个mod是本地安装的"
@@ -5296,6 +5433,9 @@ msgstr "工具"
 msgid "TOOL_HAND_AXE"
 msgstr "手斧"
 
+msgid "TOO_MANY_RECENT_VERSIONS_TO_SHOW"
+msgstr ""
+
 msgid "TOTAL_GATHERED_ENERGY_COLON"
 msgstr "收集到的能量："
 
@@ -5411,7 +5551,7 @@ msgstr ""
 
 msgid "TUTORIAL_MICROBE_EDITOR_AUTO-EVO_PREDICTION"
 msgstr ""
-"这个面板显示对你未来种群数量的预测。[b]auto-evo[/b]的人口模拟提供了这些数字。\n"
+"这个面板显示对你未来种群数量的预测。[b]auto-evo[/b]的种群数量模拟提供了这些数字。\n"
 "\n"
 "它们不会考虑你的个人表现。所以在你在当前的地区中进入编辑器时的实际表现会更好。\n"
 "\n"
@@ -5885,6 +6025,121 @@ msgstr "向上滚轮"
 msgid "WIKI"
 msgstr "Wiki"
 
+#, fuzzy
+msgid "WIKI_2D"
+msgstr "Wiki"
+
+msgid "WIKI_2D_BRACKET_EARLY_COMMA_3D_BRACKET_LATE"
+msgstr ""
+
+#, fuzzy
+msgid "WIKI_3D"
+msgstr "Wiki"
+
+msgid "WIKI_3D_COMMA_SANDBOX"
+msgstr ""
+
+#, fuzzy
+msgid "WIKI_3D_COMMA_STRATEGY"
+msgstr "[b]纤毛[/b]对于大型细胞至关重要，尤其是那些依赖掠食的细胞。 如果没有它们，大型细胞有时会受到极其缓慢的转动速度的困扰。 我们建议在演化[b][color=#3796e1][url=thriveopedia:nucleus]细胞核[/url][/color][/b]后尽快添加[b]纤毛[/b]以抵消该关键细胞器的巨大尺寸，并且将它们放置在尽可能远离细胞中心的位置，以最大限度地提高转动能力。"
+
+#, fuzzy
+msgid "WIKI_3D_COMMA_STRATEGY_COMMA_SPACE"
+msgstr "[b]纤毛[/b]对于大型细胞至关重要，尤其是那些依赖掠食的细胞。 如果没有它们，大型细胞有时会受到极其缓慢的转动速度的困扰。 我们建议在演化[b][color=#3796e1][url=thriveopedia:nucleus]细胞核[/url][/color][/b]后尽快添加[b]纤毛[/b]以抵消该关键细胞器的巨大尺寸，并且将它们放置在尽可能远离细胞中心的位置，以最大限度地提高转动能力。"
+
+#, fuzzy
+msgid "WIKI_8_BRACKET_16"
+msgstr "向左转"
+
+#, fuzzy
+msgid "WIKI_ASCENSION"
+msgstr "神经元之间的神经纤维，在多细胞阶段可用。 要求增加生物体的脑力并进入到之后的阶段。"
+
+#, fuzzy
+msgid "WIKI_ASCENSION_CURRENT_DEVELOPMENT"
+msgstr "当前开发人员"
+
+#, fuzzy
+msgid "WIKI_ASCENSION_FEATURES"
+msgstr ""
+"对于包含[b]轴突[/b]的多细胞生物中的每个细胞，该生物体的脑力与该细胞的体积成比例地增加。 具有[b]轴突[/b]的细胞将被分类为具有脑组织的类型。\n"
+"\n"
+"当脑力达到 [b]+0.5[/b] 时，玩家进入意识阶段。 当脑力达到 [b]+5.0[/b] 时，玩家进入觉醒阶段。"
+
+#, fuzzy
+msgid "WIKI_ASCENSION_INTRO"
+msgstr "神经元之间的神经纤维，在多细胞阶段可用。 要求增加生物体的脑力并进入到之后的阶段。"
+
+msgid "WIKI_ASCENSION_OVERVIEW"
+msgstr ""
+
+#, fuzzy
+msgid "WIKI_ASCENSION_TRANSITIONS"
+msgstr "恭喜！"
+
+#, fuzzy
+msgid "WIKI_ASCENSION_UI"
+msgstr "神经元之间的神经纤维，在多细胞阶段可用。 要求增加生物体的脑力并进入到之后的阶段。"
+
+#, fuzzy
+msgid "WIKI_AWAKENING_STAGE_CURRENT_DEVELOPMENT"
+msgstr ""
+"一个细胞必须拥有一个[b][color=#3796e1][url=thriveopedia:nucleus]细胞核[/url][/color][/b]才能进化出[b]连接器[/b]。\n"
+"\n"
+"如果细胞器升级在游戏设置中被开启，[i]玩家细胞[/i]必须满足以下[i]全部[/i]条件：\n"
+"\n"
+"[indent]—   拥有一个[b][color=#3796e1][url=thriveopedia:nucleus]细胞核[/url][/color][/b]至少[b]5[/b]个世代。[/indent]\n"
+"[indent]—   [thrive:compound type=\"atp\"][/thrive:compound]平衡至少达到[b]+15[/b]。[/indent]"
+
+#, fuzzy
+msgid "WIKI_AWAKENING_STAGE_FEATURES"
+msgstr "启蒙阶段"
+
+#, fuzzy
+msgid "WIKI_AWAKENING_STAGE_INTRO"
+msgstr ""
+"允许一个细胞加入它的或其他物种的细胞群落。一旦加入一个群落，细胞们结为一体移动并共享化合物。细胞必须从群落中解绑后才能进入编辑器并分裂。\n"
+"\n"
+"细胞群落是迈向多细胞生物的第一步，所以[b]连接器[/b]对进入下一阶段至关重要。"
+
+#, fuzzy
+msgid "WIKI_AWAKENING_STAGE_OVERVIEW"
+msgstr "启蒙阶段"
+
+#, fuzzy
+msgid "WIKI_AWAKENING_STAGE_TRANSITIONS"
+msgstr "启蒙阶段"
+
+#, fuzzy
+msgid "WIKI_AWAKENING_STAGE_UI"
+msgstr "启蒙阶段"
+
+msgid "WIKI_AWARE_STAGE_CURRENT_DEVELOPMENT"
+msgstr ""
+
+#, fuzzy
+msgid "WIKI_AWARE_STAGE_FEATURES"
+msgstr "知觉阶段"
+
+#, fuzzy
+msgid "WIKI_AWARE_STAGE_INTRO"
+msgstr ""
+"进行[b]厌氧固氮[/b]，消耗气态[thrive:compound type=\"nitrogen\"][/thrive:compound] 和[thrive:compound type=\"atp\"][/thrive:compound] 生产[thrive :compound type=\"ammonia\"][/thrive:compound]，产生细胞繁殖生长所需的成分之一。 效率低于真核版本的[b][color=#3796e1][url=thriveopedia:nitrogenfixingplastid]固氮质体[/url][/color][/b]。\n"
+"\n"
+"也会进行一些[b]糖酵解[/b]，消耗[thrive:compound type=\"glucose\"][/thrive:compound] 生产[thrive:compound type=\"atp\"][/thrive:compound]。"
+
+#, fuzzy
+msgid "WIKI_AWARE_STAGE_OVERVIEW"
+msgstr "知觉阶段"
+
+#, fuzzy
+msgid "WIKI_AWARE_STAGE_TRANSITIONS"
+msgstr "固氮酶"
+
+#, fuzzy
+msgid "WIKI_AWARE_STAGE_UI"
+msgstr "知觉阶段"
+
 msgid "WIKI_AXON_EFFECTS"
 msgstr ""
 "对于包含[b]轴突[/b]的多细胞生物中的每个细胞，该生物体的脑力与该细胞的体积成比例地增加。 具有[b]轴突[/b]的细胞将被分类为具有脑组织的类型。\n"
@@ -5911,6 +6166,10 @@ msgstr "添加[b]轴突[/b]对于进入之后的阶段至关重要。 我们建�
 
 msgid "WIKI_AXON_UPGRADES"
 msgstr "无升级"
+
+#, fuzzy
+msgid "WIKI_BACTERIAL_CHEMOSYNTHESIS_COMMA_GLYCOLYSIS"
+msgstr "氧化毒素合成"
 
 msgid "WIKI_BINDING_AGENT_EFFECTS"
 msgstr ""
@@ -5985,6 +6244,9 @@ msgstr "游戏中不可用，等待实现。"
 
 msgid "WIKI_BIOLUMINESCENT_VACUOLE_UPGRADES"
 msgstr "无升级。等待实现。"
+
+msgid "WIKI_BODY_PLAN_EDITOR_COMMA_CELL_EDITOR"
+msgstr ""
 
 msgid "WIKI_CHEMOPLAST_EFFECTS"
 msgstr "无效果"
@@ -6127,6 +6389,10 @@ msgstr ""
 msgid "WIKI_CHLOROPLAST_UPGRADES"
 msgstr "无升级。"
 
+#, fuzzy
+msgid "WIKI_CHROMATOPHORE_PHOTOSYNTHESIS_COMMA_GLYCOLYSIS"
+msgstr "氧化毒素合成"
+
 msgid "WIKI_CILIA_EFFECTS"
 msgstr "每个六边形网格的[b]纤毛[/b]都会增加细胞的旋转速度，消耗[thrive:compound type=\"atp\"][/thrive:compound] 以换取额外的机动性。 强度取决于细胞器的位置—那些距离细胞中心较远的细胞器会产生更大的转动惯量，因此转速会有更大的增加。"
 
@@ -6142,6 +6408,7 @@ msgstr "无代谢过程。"
 msgid "WIKI_CILIA_REQUIREMENTS"
 msgstr "细胞必须有[b][color=#3796e1][url=thriveopedia:nucleus]细胞核[/url][/color][/b]才能演化出[b]纤毛[/b]。"
 
+#, fuzzy
 msgid "WIKI_CILIA_SCIENTIFIC_BACKGROUND"
 msgstr ""
 "与[b][color=#3796e1][url=thriveopedia:flagellum]鞭毛[/url][/color][/b]类似，[b]纤毛[/b]是提供定向推力的细毛，但它们以不同的方式移动，并且还具有其他好处。 许多生物体利用[b]纤毛[/b]来实现感官目的，它们也可以在较大的生物体中搬运营养物质。\n"
@@ -6158,6 +6425,39 @@ msgstr ""
 "[b]捕食纤毛[/b]\n"
 "\n"
 "需要 [b]25[/b] 突变点数，修改[b]纤毛[/b]将其转变为[b]捕食纤毛[/b]。 除了细胞器的常规作用外，[b]捕食纤毛[/b]会产生漩涡来吸引小细胞和碎块，例如漂浮的细胞器。"
+
+#, fuzzy
+msgid "WIKI_COMPOUNDS_BUTTON"
+msgstr ""
+"细胞粘稠的内脏。[b]细胞质[/b]是溶解在水中的离子，蛋白质和其它物质的基本混合物，充满了细胞的内部。\n"
+"\n"
+"它其中一个功能是[b]细胞质糖酵解[/b]，作用是将[thrive:compound type=\"glucose\"][/thrive:compound]转换成[thrive:compound type=\"atp\"][/thrive:compound]。对于缺少细胞器而不能进行更高级代谢活动的细胞而言就是它们能量的来源。它同样还能用来储存收集到的化合物和增加细胞的大小。"
+
+#, fuzzy
+msgid "WIKI_COMPOUNDS_DEVELOPMENT"
+msgstr "化合物："
+
+#, fuzzy
+msgid "WIKI_COMPOUNDS_INTRO"
+msgstr ""
+"细胞粘稠的内脏。[b]细胞质[/b]是溶解在水中的离子，蛋白质和其它物质的基本混合物，充满了细胞的内部。\n"
+"\n"
+"它其中一个功能是[b]细胞质糖酵解[/b]，作用是将[thrive:compound type=\"glucose\"][/thrive:compound]转换成[thrive:compound type=\"atp\"][/thrive:compound]。对于缺少细胞器而不能进行更高级代谢活动的细胞而言就是它们能量的来源。它同样还能用来储存收集到的化合物和增加细胞的大小。"
+
+msgid "WIKI_COMPOUNDS_TYPES_OF_COMPOUNDS"
+msgstr ""
+
+msgid "WIKI_COMPOUND_SYSTEM_DEVELOPMENT_COMPOUNDS_LIST"
+msgstr ""
+
+msgid "WIKI_COMPOUND_SYSTEM_DEVELOPMENT_INTRO"
+msgstr ""
+
+msgid "WIKI_COMPOUND_SYSTEM_DEVELOPMENT_MICROBE_STAGE"
+msgstr ""
+
+msgid "WIKI_COMPOUND_SYSTEM_DEVELOPMENT_OVERVIEW"
+msgstr ""
 
 msgid "WIKI_CYTOPLASM_EFFECTS"
 msgstr "任何其他细胞器在取代[b]细胞质[/b]时不会消耗额外的变异点数（仅消耗细胞器本身所需要的变异点数）。"
@@ -6199,6 +6499,56 @@ msgstr ""
 msgid "WIKI_CYTOPLASM_UPGRADES"
 msgstr "无升级。"
 
+#, fuzzy
+msgid "WIKI_DEVELOPMENT"
+msgstr "开发者wiki"
+
+#, fuzzy
+msgid "WIKI_DEVELOPMENT_INFO_BUTTON"
+msgstr ""
+"细胞器是细胞的“器官”。在Thrive中，它们是你细胞的组件，控制着它的代谢过程和能力。\n"
+"\n"
+"每次你进行增殖时，你就可以在细胞编辑器里增加，移动，修改或删除细胞中的细胞器。几乎所有这些动作都需要花费变异点数。细胞器占有一个或多个六边形格子，形成被细胞膜包裹的完整结构，且各种细胞器占用的格数不同。外部细胞器会附着在细胞膜的外侧，因此对其中大多数来说，放置的方向会对功能产生影响。\n"
+"\n"
+"当你编辑你的细胞时，其他物种的细胞器布局也会发生变化。它们可以获得相同的细胞器以获得相同的能力。\n"
+"\n"
+"在下方列表中选择一个细胞器以了解更多。"
+
+#, fuzzy
+msgid "WIKI_DEVELOPMENT_ROOT_INTRO"
+msgstr ""
+"细胞器是细胞的“器官”。在Thrive中，它们是你细胞的组件，控制着它的代谢过程和能力。\n"
+"\n"
+"每次你进行增殖时，你就可以在细胞编辑器里增加，移动，修改或删除细胞中的细胞器。几乎所有这些动作都需要花费变异点数。细胞器占有一个或多个六边形格子，形成被细胞膜包裹的完整结构，且各种细胞器占用的格数不同。外部细胞器会附着在细胞膜的外侧，因此对其中大多数来说，放置的方向会对功能产生影响。\n"
+"\n"
+"当你编辑你的细胞时，其他物种的细胞器布局也会发生变化。它们可以获得相同的细胞器以获得相同的能力。\n"
+"\n"
+"在下方列表中选择一个细胞器以了解更多。"
+
+msgid "WIKI_EDITORS_AND_MUTATIONS_GENERATIONS_AND_EDITOR_SESSIONS"
+msgstr ""
+
+#, fuzzy
+msgid "WIKI_EDITORS_AND_MUTATIONS_INTRO"
+msgstr "细胞的发电厂。[b]线粒体[/b]进行[b]有氧呼吸[/b]，或者说用[thrive:compound type=\"oxygen\"][/thrive:compound]把[thrive:compound type=\"glucose\"]转化为[thrive:compound type=\"atp\"][/thrive:compound]。[b]线粒体[/b]执行这项功能的效率高于例如[b][color=#3796e1][url=thriveopedia:metabolosome]代谢体[/url][/color][/b]的其他细胞器。"
+
+msgid "WIKI_EDITORS_AND_MUTATIONS_MUTATIONS_AND_MUTATION_POINTS"
+msgstr ""
+
+msgid "WIKI_ENVIRONMENTAL_CONDITIONS_ENVIRONMENTAL_GASSES"
+msgstr ""
+
+#, fuzzy
+msgid "WIKI_ENVIRONMENTAL_CONDITIONS_INTRO"
+msgstr "细胞的发电厂。[b]线粒体[/b]进行[b]有氧呼吸[/b]，或者说用[thrive:compound type=\"oxygen\"][/thrive:compound]把[thrive:compound type=\"glucose\"]转化为[thrive:compound type=\"atp\"][/thrive:compound]。[b]线粒体[/b]执行这项功能的效率高于例如[b][color=#3796e1][url=thriveopedia:metabolosome]代谢体[/url][/color][/b]的其他细胞器。"
+
+#, fuzzy
+msgid "WIKI_ENVIRONMENTAL_CONDITIONS_PHYSICAL_CONDITIONS"
+msgstr "（每一代后环境葡萄糖保留的比例）"
+
+msgid "WIKI_ENVIRONMENTAL_CONDITIONS_THE_DAY/NIGHT_CYCLE"
+msgstr ""
+
 msgid "WIKI_FLAGELLUM_EFFECTS"
 msgstr "每个[b]鞭毛[/b]提供与其方向相反的方向的定向推力。 它们也在接近完全相反的方向上提供部分推力（准确地说，是那些与完全相反的向量的分量（内积）为正的方向）。 每当[b]鞭毛[/b]处于活动状态时，它就会消耗[thrive:compound type=\"atp\"][/thrive:compound]。"
 
@@ -6230,14 +6580,89 @@ msgstr ""
 msgid "WIKI_FLAGELLUM_UPGRADES"
 msgstr "无升级"
 
+#, fuzzy
+msgid "WIKI_GLYCOLYSIS_COMMA_ANAEROBIC_NITROGEN_FIXATION"
+msgstr "无氧固氨"
+
+#, fuzzy
+msgid "WIKI_HEADING_APPENDICES"
+msgstr "可用升级"
+
+#, fuzzy
+msgid "WIKI_HEADING_COMPOUNDS_LIST"
+msgstr "代谢过程"
+
+#, fuzzy
+msgid "WIKI_HEADING_CONCEPT_ART"
+msgstr "游戏策略"
+
+#, fuzzy
+msgid "WIKI_HEADING_CURRENT_DEVELOPMENT"
+msgstr "解锁条件"
+
+#, fuzzy
+msgid "WIKI_HEADING_DEVELOPMENT"
+msgstr "解锁条件"
+
+#, fuzzy
+msgid "WIKI_HEADING_EDITOR"
+msgstr "影响与效果"
+
 msgid "WIKI_HEADING_EFFECTS"
 msgstr "影响与效果"
+
+#, fuzzy
+msgid "WIKI_HEADING_ENVIRONMENTAL_GASSES"
+msgstr "代谢过程"
+
+#, fuzzy
+msgid "WIKI_HEADING_FEATURES"
+msgstr "影响与效果"
+
+#, fuzzy
+msgid "WIKI_HEADING_FOG_OF_WAR"
+msgstr "影响与效果"
+
+#, fuzzy
+msgid "WIKI_HEADING_GAMEPLAY"
+msgstr "游戏策略"
+
+#, fuzzy
+msgid "WIKI_HEADING_GDD"
+msgstr "可用升级"
+
+#, fuzzy
+msgid "WIKI_HEADING_GENERATIONS_AND_EDITOR_SESSIONS"
+msgstr "修改选项"
+
+#, fuzzy
+msgid "WIKI_HEADING_MICROBE_STAGE"
+msgstr "代谢过程"
 
 msgid "WIKI_HEADING_MODIFICATIONS"
 msgstr "修改选项"
 
+#, fuzzy
+msgid "WIKI_HEADING_MUTATIONS_AND_MUTATION_POINTS"
+msgstr "修改选项"
+
+#, fuzzy
+msgid "WIKI_HEADING_OVERVIEW"
+msgstr "代谢过程"
+
+#, fuzzy
+msgid "WIKI_HEADING_PATCHES"
+msgstr "可用升级"
+
+#, fuzzy
+msgid "WIKI_HEADING_PHYSICAL_CONDITIONS"
+msgstr "物理条件"
+
 msgid "WIKI_HEADING_PROCESSES"
 msgstr "代谢过程"
+
+msgid "WIKI_HEADING_REPRODUCTION_IN_THE_MICROBE_STAGE"
+msgstr ""
 
 msgid "WIKI_HEADING_REQUIREMENTS"
 msgstr "解锁条件"
@@ -6248,8 +6673,64 @@ msgstr "科学背景"
 msgid "WIKI_HEADING_STRATEGY"
 msgstr "游戏策略"
 
+#, fuzzy
+msgid "WIKI_HEADING_THE_DAY/NIGHT_CYCLE"
+msgstr "游戏策略"
+
+#, fuzzy
+msgid "WIKI_HEADING_THE_PATCH_MAP"
+msgstr "游戏策略"
+
+#, fuzzy
+msgid "WIKI_HEADING_TRANSITIONS"
+msgstr "修改选项"
+
+#, fuzzy
+msgid "WIKI_HEADING_TYPES_OF_COMPOUNDS"
+msgstr "影响与效果"
+
+#, fuzzy
+msgid "WIKI_HEADING_UI"
+msgstr "可用升级"
+
 msgid "WIKI_HEADING_UPGRADES"
 msgstr "可用升级"
+
+#, fuzzy
+msgid "WIKI_INDUSTRIAL_STAGE_CURRENT_DEVELOPMENT"
+msgstr ""
+"一个细胞必须拥有一个[b][color=#3796e1][url=thriveopedia:nucleus]细胞核[/url][/color][/b]才能进化出[b]连接器[/b]。\n"
+"\n"
+"如果细胞器升级在游戏设置中被开启，[i]玩家细胞[/i]必须满足以下[i]全部[/i]条件：\n"
+"\n"
+"[indent]—   拥有一个[b][color=#3796e1][url=thriveopedia:nucleus]细胞核[/url][/color][/b]至少[b]5[/b]个世代。[/indent]\n"
+"[indent]—   [thrive:compound type=\"atp\"][/thrive:compound]平衡至少达到[b]+15[/b]。[/indent]"
+
+#, fuzzy
+msgid "WIKI_INDUSTRIAL_STAGE_FEATURES"
+msgstr "工业阶段"
+
+#, fuzzy
+msgid "WIKI_INDUSTRIAL_STAGE_INTRO"
+msgstr ""
+"允许一个细胞加入它的或其他物种的细胞群落。一旦加入一个群落，细胞们结为一体移动并共享化合物。细胞必须从群落中解绑后才能进入编辑器并分裂。\n"
+"\n"
+"细胞群落是迈向多细胞生物的第一步，所以[b]连接器[/b]对进入下一阶段至关重要。"
+
+#, fuzzy
+msgid "WIKI_INDUSTRIAL_STAGE_OVERVIEW"
+msgstr "工业阶段"
+
+#, fuzzy
+msgid "WIKI_INDUSTRIAL_STAGE_TRANSITIONS"
+msgstr "工业阶段"
+
+#, fuzzy
+msgid "WIKI_INDUSTRIAL_STAGE_UI"
+msgstr "工业阶段"
+
+msgid "WIKI_INJECTISOME_PILUS"
+msgstr ""
 
 msgid "WIKI_LYSOSOME_EFFECTS"
 msgstr ""
@@ -6299,6 +6780,21 @@ msgstr ""
 msgid "WIKI_LYSOSOME_UPGRADES"
 msgstr "无升级。"
 
+#, fuzzy
+msgid "WIKI_MECHANICS"
+msgstr "细胞器"
+
+#, fuzzy
+msgid "WIKI_MECHANICS_ROOT_INTRO"
+msgstr ""
+"细胞器是细胞的“器官”。在Thrive中，它们是你细胞的组件，控制着它的代谢过程和能力。\n"
+"\n"
+"每次你进行增殖时，你就可以在细胞编辑器里增加，移动，修改或删除细胞中的细胞器。几乎所有这些动作都需要花费变异点数。细胞器占有一个或多个六边形格子，形成被细胞膜包裹的完整结构，且各种细胞器占用的格数不同。外部细胞器会附着在细胞膜的外侧，因此对其中大多数来说，放置的方向会对功能产生影响。\n"
+"\n"
+"当你编辑你的细胞时，其他物种的细胞器布局也会发生变化。它们可以获得相同的细胞器以获得相同的能力。\n"
+"\n"
+"在下方列表中选择一个细胞器以了解更多。"
+
 msgid "WIKI_METABOLOSOMES_EFFECTS"
 msgstr "无效果。"
 
@@ -6336,6 +6832,58 @@ msgstr ""
 msgid "WIKI_METABOLOSOMES_UPGRADES"
 msgstr "无升级。"
 
+#, fuzzy
+msgid "WIKI_MICROBE_STAGE_APPENDICES"
+msgstr ""
+"在一颗遥远的外星球上，亿万年的化学进化产生了自我复制的分子，于是，宇宙中发展出了一种新现象——\n"
+"\n"
+"生命。\n"
+"\n"
+"结构简单的微生物栖息在温暖的浅水池塘中。而您便是这个星球上生物的最后的普遍共同祖先（LUCA）。\n"
+"\n"
+"要在这个充满敌意的世界活下去，您需要收集任何你能找到的化合物，并且在每个世代不断地进化，才能够跟其它的微生物竞争。"
+
+#, fuzzy
+msgid "WIKI_MICROBE_STAGE_BUTTON"
+msgstr ""
+"在一个遥远的外星球上，恒古的火山活动和陨石冲击引发了一种新现象的出现。\n"
+"\n"
+"生命。\n"
+"\n"
+"简单的微生物栖息在海洋的深处。你便是这个星球上的最后普遍共同祖先（LUCA）。\n"
+"\n"
+"要在这个艰难的世界存活下来，你将需要任何你能找到的化合物并在多个世代里不断进化，才能跟其它的微生物竞争。"
+
+#, fuzzy
+msgid "WIKI_MICROBE_STAGE_EDITOR"
+msgstr "微生物编辑器"
+
+#, fuzzy
+msgid "WIKI_MICROBE_STAGE_GAMEPLAY"
+msgstr ""
+"在一个遥远的外星球上，恒古的火山活动和陨石冲击引发了一种新现象的出现。\n"
+"\n"
+"生命。\n"
+"\n"
+"简单的微生物栖息在海洋的深处。你便是这个星球上的最后普遍共同祖先（LUCA）。\n"
+"\n"
+"要在这个艰难的世界存活下来，你将需要任何你能找到的化合物并在多个世代里不断进化，才能跟其它的微生物竞争。"
+
+#, fuzzy
+msgid "WIKI_MICROBE_STAGE_GDD"
+msgstr "微生物阶段"
+
+#, fuzzy
+msgid "WIKI_MICROBE_STAGE_INTRO"
+msgstr ""
+"在一个遥远的外星球上，恒古的火山活动和陨石冲击引发了一种新现象的出现。\n"
+"\n"
+"生命。\n"
+"\n"
+"简单的微生物栖息在海洋的深处。你便是这个星球上的最后普遍共同祖先（LUCA）。\n"
+"\n"
+"要在这个艰难的世界存活下来，你将需要任何你能找到的化合物并在多个世代里不断进化，才能跟其它的微生物竞争。"
+
 msgid "WIKI_MITOCHONDRION_EFFECTS"
 msgstr "无效果。"
 
@@ -6372,6 +6920,43 @@ msgstr ""
 msgid "WIKI_MITOCHONDRION_UPGRADES"
 msgstr "无升级。"
 
+#, fuzzy
+msgid "WIKI_MULTICELLULAR_STAGE_CONCEPT_ART"
+msgstr "多细胞阶段"
+
+#, fuzzy
+msgid "WIKI_MULTICELLULAR_STAGE_CURRENT_DEVELOPMENT"
+msgstr ""
+"欢迎来到早期多细胞生物阶段!\n"
+"\n"
+"你已经成功带领你的物种度过了单细胞生物阶段.\n"
+"\n"
+"游戏现在的核心玩法与单细胞生物阶段并无二致. 你仍需要使你的生物持续生长以繁殖并进入编辑器.\n"
+"\n"
+"然而，你现在可以设计细胞群落中各细胞排布的位置并使它们分化以让它们分别承担不同的生命活动. 不过要记住群落中的各个细胞并不能共享 [thrive:compound type=\"atp\"][/thrive:compound].\n"
+"\n"
+"如果你使用出芽繁殖 (默认繁殖方式), 你开始时只会控制一个芽体并需要长出群落中剩下的细胞."
+
+#, fuzzy
+msgid "WIKI_MULTICELLULAR_STAGE_FEATURES"
+msgstr "多细胞阶段"
+
+#, fuzzy
+msgid "WIKI_MULTICELLULAR_STAGE_INTRO"
+msgstr "多细胞阶段"
+
+#, fuzzy
+msgid "WIKI_MULTICELLULAR_STAGE_OVERVIEW"
+msgstr "多细胞阶段"
+
+#, fuzzy
+msgid "WIKI_MULTICELLULAR_STAGE_TRANSITIONS"
+msgstr "多细胞阶段"
+
+#, fuzzy
+msgid "WIKI_MULTICELLULAR_STAGE_UI"
+msgstr "多细胞阶段"
+
 msgid "WIKI_MYOFIBRIL_EFFECTS"
 msgstr "对于包含[b]肌原纤维[/b]的多细胞生物中的每个细胞，该生物的运动速度与该细胞的体积成比例地增加。 具有[b]肌原纤维[/b]的细胞将被分类为具有肌肉组织的类型。"
 
@@ -6395,6 +6980,10 @@ msgstr "我们建议在多细胞生物的多种细胞类型中添加一个[b]肌
 
 msgid "WIKI_MYOFIBRIL_UPGRADES"
 msgstr "无升级"
+
+#, fuzzy
+msgid "WIKI_NATION_EDITOR"
+msgstr "启用编辑器"
 
 msgid "WIKI_NITROGEN-FIXING_PLASTID_EFFECTS"
 msgstr "无效果"
@@ -6466,6 +7055,13 @@ msgstr ""
 msgid "WIKI_NITROGENASE_UPGRADES"
 msgstr "无升级。"
 
+#, fuzzy
+msgid "WIKI_NO"
+msgstr "Wiki"
+
+msgid "WIKI_NONE_COMMA_THIS_IS_THE_LAST_STAGE"
+msgstr ""
+
 msgid "WIKI_NUCLEUS_EFFECTS"
 msgstr ""
 "一旦细胞演化出[b]细胞核[/b]，它就获得了演化许多先前锁定的其他细胞器的能力。\n"
@@ -6488,6 +7084,7 @@ msgstr "无修改。"
 msgid "WIKI_NUCLEUS_PROCESSES"
 msgstr "无代谢过程。"
 
+#, fuzzy
 msgid "WIKI_NUCLEUS_REQUIREMENTS"
 msgstr "无要求"
 
@@ -6555,6 +7152,22 @@ msgstr ""
 msgid "WIKI_OXYTOXISOME_UPGRADES"
 msgstr "无升级。"
 
+#, fuzzy
+msgid "WIKI_OXYTOXY_SYNTHESIS_COMMA_GLYCOLYSIS"
+msgstr "氧化毒素合成"
+
+#, fuzzy
+msgid "WIKI_PAGE_ASCENSION"
+msgstr "轴突"
+
+#, fuzzy
+msgid "WIKI_PAGE_AWAKENING_STAGE"
+msgstr "启蒙阶段"
+
+#, fuzzy
+msgid "WIKI_PAGE_AWARE_STAGE"
+msgstr "知觉阶段"
+
 msgid "WIKI_PAGE_AXON"
 msgstr "轴突"
 
@@ -6579,20 +7192,55 @@ msgstr "叶绿体"
 msgid "WIKI_PAGE_CILIA"
 msgstr "纤毛"
 
+#, fuzzy
+msgid "WIKI_PAGE_COMPOUNDS"
+msgstr "细胞质"
+
+msgid "WIKI_PAGE_COMPOUND_SYSTEM_DEVELOPMENT"
+msgstr ""
+
 msgid "WIKI_PAGE_CYTOPLASM"
 msgstr "细胞质"
+
+#, fuzzy
+msgid "WIKI_PAGE_DEVELOPMENT_ROOT"
+msgstr "细胞器"
+
+#, fuzzy
+msgid "WIKI_PAGE_EDITORS_AND_MUTATIONS"
+msgstr "线粒体"
+
+#, fuzzy
+msgid "WIKI_PAGE_ENVIRONMENTAL_CONDITIONS"
+msgstr "线粒体"
 
 msgid "WIKI_PAGE_FLAGELLUM"
 msgstr "鞭毛"
 
+#, fuzzy
+msgid "WIKI_PAGE_INDUSTRIAL_STAGE"
+msgstr "工业阶段"
+
 msgid "WIKI_PAGE_LYSOSOME"
 msgstr "溶酶体"
+
+#, fuzzy
+msgid "WIKI_PAGE_MECHANICS_ROOT"
+msgstr "细胞器"
 
 msgid "WIKI_PAGE_METABOLOSOMES"
 msgstr "代谢体"
 
+#, fuzzy
+msgid "WIKI_PAGE_MICROBE_STAGE"
+msgstr "固氮酶"
+
 msgid "WIKI_PAGE_MITOCHONDRION"
 msgstr "线粒体"
+
+#, fuzzy
+msgid "WIKI_PAGE_MULTICELLULAR_STAGE"
+msgstr "多细胞阶段"
 
 msgid "WIKI_PAGE_MYOFIBRIL"
 msgstr "肌原纤维"
@@ -6618,6 +7266,10 @@ msgstr "掠食性菌毛"
 msgid "WIKI_PAGE_PROTOPLASM"
 msgstr "原生质"
 
+#, fuzzy
+msgid "WIKI_PAGE_REPRODUCTION"
+msgstr "原生质"
+
 msgid "WIKI_PAGE_RUSTICYANIN"
 msgstr "铁硫菌蓝蛋白"
 
@@ -6627,11 +7279,27 @@ msgstr "信号剂"
 msgid "WIKI_PAGE_SLIME_JET"
 msgstr "黏液喷嘴"
 
+#, fuzzy
+msgid "WIKI_PAGE_SOCIETY_STAGE"
+msgstr "社会阶段"
+
+#, fuzzy
+msgid "WIKI_PAGE_SPACE_STAGE"
+msgstr "黏液喷嘴"
+
+#, fuzzy
+msgid "WIKI_PAGE_STAGES_ROOT"
+msgstr "细胞器"
+
 msgid "WIKI_PAGE_THERMOPLAST"
 msgstr "热能体"
 
 msgid "WIKI_PAGE_THERMOSYNTHASE"
 msgstr "热合成酶"
+
+#, fuzzy
+msgid "WIKI_PAGE_THE_PATCH_MAP"
+msgstr "热能体"
 
 msgid "WIKI_PAGE_THYLAKOIDS"
 msgstr "类囊体"
@@ -6675,7 +7343,7 @@ msgstr ""
 
 msgid "WIKI_PERFORATOR_PILUS_STRATEGY"
 msgstr ""
-"带有[b]掠食性菌毛[/b]的细胞能成为高效的掠食者，可以伤害任何细胞，甚至是那些具有抗毒素或抗吞噬膜的细胞。 但必须小心放置它们，并且需要战斗技巧。\n"
+"带有[b]掠食性菌毛[/b]的细胞能成为高效的掠食者并可以伤害任何细胞，甚至是那些具有抗毒素或抗吞噬细胞膜的细胞。 但必须小心放置它们，并且需要战斗技巧。\n"
 "\n"
 "[b]掠食性菌毛[/b]也可以对别的猎食者有强大的吓阻作用。 尖刺球不太可能被视为一顿简单的饭菜。"
 
@@ -6684,6 +7352,10 @@ msgstr ""
 "[b]注射性菌毛[/b]\n"
 "\n"
 "需要 [b]25[/b] 突变点数，修改[b]掠食性菌毛[/b]将其转变为[b]注射性菌毛[/b]。 当它们攻击敌方细胞时，同时也会造成毒素伤害。 降低毒素伤害的细胞膜类型也可以降低[b]注射性菌毛[/b]造成的伤害。"
+
+#, fuzzy
+msgid "WIKI_PROTEIN_RESPIRATION"
+msgstr "有氧呼吸作用"
 
 msgid "WIKI_PROTOPLASM_EFFECTS"
 msgstr "无效果。"
@@ -6720,6 +7392,27 @@ msgstr ""
 
 msgid "WIKI_PROTOPLASM_UPGRADES"
 msgstr "无升级。"
+
+#, fuzzy
+msgid "WIKI_PULLING_CILIA"
+msgstr "纤毛"
+
+#, fuzzy
+msgid "WIKI_REPRODUCTION_BUTTON"
+msgstr ""
+"用以提升非玩家细胞的储存的[b][color=#3796e1][url=thriveopedia:cytoplasm]细胞质[/url][/color][/b]的显著增强版本。无法被添加到玩家细胞中，但可能在玩家从环境中化石化的细胞中出现。\n"
+"\n"
+"视觉上与[b][color=#3796e1][url=thriveopedia:cytoplasm]细胞质[/url][/color][/b]匹配并继承它的许多特性。"
+
+#, fuzzy
+msgid "WIKI_REPRODUCTION_INTRO"
+msgstr ""
+"用以提升非玩家细胞的储存的[b][color=#3796e1][url=thriveopedia:cytoplasm]细胞质[/url][/color][/b]的显著增强版本。无法被添加到玩家细胞中，但可能在玩家从环境中化石化的细胞中出现。\n"
+"\n"
+"视觉上与[b][color=#3796e1][url=thriveopedia:cytoplasm]细胞质[/url][/color][/b]匹配并继承它的许多特性。"
+
+msgid "WIKI_REPRODUCTION_REPRODUCTION_IN_THE_MICROBE_STAGE"
+msgstr ""
 
 msgid "WIKI_ROOT_BODY"
 msgstr ""
@@ -6834,6 +7527,73 @@ msgstr ""
 msgid "WIKI_SLIME_JET_UPGRADES"
 msgstr "无升级"
 
+msgid "WIKI_SOCIETY_STAGE_CURRENT_DEVELOPMENT"
+msgstr ""
+
+#, fuzzy
+msgid "WIKI_SOCIETY_STAGE_FEATURES"
+msgstr "社会阶段"
+
+#, fuzzy
+msgid "WIKI_SOCIETY_STAGE_INTRO"
+msgstr ""
+"由[thrive:compound type=\"glucose\"][/thrive:compound] 合成一种名为[thrive:compound type=\"mucilage\"][/thrive:compound] 的黏性聚合物。允许细胞喷射[thrive:compound type=\"mucilage\"][/thrive:compound] 以推动自身，同时减慢进入排出物质的生物的速度。\n"
+"\n"
+"与[b][color=#3796e1][url=thriveopedia:flagellum]鞭毛[/url][/color][/b]相比，它提供更快的加速度，有助于躲避掠食者或追上猎物。"
+
+#, fuzzy
+msgid "WIKI_SOCIETY_STAGE_OVERVIEW"
+msgstr "社会阶段"
+
+#, fuzzy
+msgid "WIKI_SOCIETY_STAGE_TRANSITIONS"
+msgstr "社会阶段"
+
+#, fuzzy
+msgid "WIKI_SOCIETY_STAGE_UI"
+msgstr "社会阶段"
+
+msgid "WIKI_SPACE_STAGE_CURRENT_DEVELOPMENT"
+msgstr ""
+
+#, fuzzy
+msgid "WIKI_SPACE_STAGE_FEATURES"
+msgstr "黏液喷嘴"
+
+#, fuzzy
+msgid "WIKI_SPACE_STAGE_INTRO"
+msgstr ""
+"由[thrive:compound type=\"glucose\"][/thrive:compound] 合成一种名为[thrive:compound type=\"mucilage\"][/thrive:compound] 的黏性聚合物。允许细胞喷射[thrive:compound type=\"mucilage\"][/thrive:compound] 以推动自身，同时减慢进入排出物质的生物的速度。\n"
+"\n"
+"与[b][color=#3796e1][url=thriveopedia:flagellum]鞭毛[/url][/color][/b]相比，它提供更快的加速度，有助于躲避掠食者或追上猎物。"
+
+#, fuzzy
+msgid "WIKI_SPACE_STAGE_OVERVIEW"
+msgstr "太空阶段"
+
+#, fuzzy
+msgid "WIKI_SPACE_STAGE_TRANSITIONS"
+msgstr "固氮酶"
+
+#, fuzzy
+msgid "WIKI_SPACE_STAGE_UI"
+msgstr "太空阶段"
+
+#, fuzzy
+msgid "WIKI_STAGES_ROOT_INTRO"
+msgstr ""
+"细胞器是细胞的“器官”。在Thrive中，它们是你细胞的组件，控制着它的代谢过程和能力。\n"
+"\n"
+"每次你进行增殖时，你就可以在细胞编辑器里增加，移动，修改或删除细胞中的细胞器。几乎所有这些动作都需要花费变异点数。细胞器占有一个或多个六边形格子，形成被细胞膜包裹的完整结构，且各种细胞器占用的格数不同。外部细胞器会附着在细胞膜的外侧，因此对其中大多数来说，放置的方向会对功能产生影响。\n"
+"\n"
+"当你编辑你的细胞时，其他物种的细胞器布局也会发生变化。它们可以获得相同的细胞器以获得相同的能力。\n"
+"\n"
+"在下方列表中选择一个细胞器以了解更多。"
+
+#, fuzzy
+msgid "WIKI_TBA"
+msgstr "Wiki"
+
 msgid "WIKI_THERMOPLAST_EFFECTS"
 msgstr "无效果。"
 
@@ -6909,6 +7669,23 @@ msgstr ""
 
 msgid "WIKI_THERMOSYNTHASE_UPGRADES"
 msgstr "无升级。"
+
+msgid "WIKI_THE_PATCH_MAP_FOG_OF_WAR"
+msgstr ""
+
+#, fuzzy
+msgid "WIKI_THE_PATCH_MAP_INTRO"
+msgstr ""
+"利用环境中的[thrive:compound type=\"temperature\"][/thrive:compound] 梯度以[thrive:compound type=\"atp\"][/thrive:compound] 的形式提取能量。 效率高于原核版本的[b][color=#3796e1][url=thriveopedia:thermosynthase]热合成酶[/url][/color][/b]。\n"
+"\n"
+"这是未在现实中发现的猜想中的细胞器。 在开启仅限已知生命形式选项的游戏中不可用。"
+
+#, fuzzy
+msgid "WIKI_THE_PATCH_MAP_PATCHES"
+msgstr "无升级。"
+
+msgid "WIKI_THE_PATCH_MAP_THE_PATCH_MAP"
+msgstr ""
 
 msgid "WIKI_THYLAKOIDS_EFFECTS"
 msgstr "无特殊效果。"
@@ -7015,6 +7792,10 @@ msgstr "虽然额外的储存在任何情况下都很有用，但[b]液泡[/b]�
 msgid "WIKI_VACUOLE_UPGRADES"
 msgstr "无升级。"
 
+#, fuzzy
+msgid "WIKI_YES"
+msgstr "Wiki"
+
 msgid "WILL_YOU_THRIVE"
 msgstr "你能Thrive（兴盛）吗？"
 
@@ -7086,6 +7867,10 @@ msgstr "Xbox Series X"
 msgid "YEARS"
 msgstr "年"
 
+#, fuzzy
+msgid "YET_TO_BE_IMPLEMENTED_NOTICE"
+msgstr "仍在开发中。"
+
 msgid "YOUTUBE_TOOLTIP"
 msgstr "访问我们的YouTube频道"
 
@@ -7102,6 +7887,106 @@ msgstr "放大"
 
 msgid "ZOOM_OUT"
 msgstr "缩小"
+
+#, fuzzy
+#~ msgid "ASCENSION"
+#~ msgstr "版本："
+
+#, fuzzy
+#~ msgid "WIKI_CYTOPLASM_GLYCOLYSIS"
+#~ msgstr "细胞质糖酵解"
+
+#, fuzzy
+#~ msgid "WIKI_AEROBIC_NITROGEN_FIXATION"
+#~ msgstr "无氧固氨"
+
+#, fuzzy
+#~ msgid "WIKI_AWAKENING_STAGE"
+#~ msgstr "启蒙阶段"
+
+#, fuzzy
+#~ msgid "WIKI_AWARE_STAGE"
+#~ msgstr "知觉阶段"
+
+#, fuzzy
+#~ msgid "WIKI_CHEMOSYNTHESIS"
+#~ msgstr "化学合成"
+
+#, fuzzy
+#~ msgid "WIKI_GLYCOLYSIS"
+#~ msgstr "糖酵解"
+
+#, fuzzy
+#~ msgid "WIKI_INDUSTRIAL_STAGE"
+#~ msgstr "工业阶段"
+
+#, fuzzy
+#~ msgid "WIKI_IRON_CHEMOLITHOAUTOTROPHY"
+#~ msgstr "铁化能无机自养"
+
+#, fuzzy
+#~ msgid "WIKI_LIPASE"
+#~ msgstr "脂肪酶"
+
+#, fuzzy
+#~ msgid "WIKI_MICROBE_EDITOR"
+#~ msgstr "微生物编辑器"
+
+#, fuzzy
+#~ msgid "WIKI_MICROBE_STAGE"
+#~ msgstr "微生物阶段"
+
+#, fuzzy
+#~ msgid "WIKI_MUCILAGE_SYNTHESIS"
+#~ msgstr "黏液合成"
+
+#, fuzzy
+#~ msgid "WIKI_MULTICELLULAR_STAGE"
+#~ msgstr "多细胞阶段"
+
+#, fuzzy
+#~ msgid "WIKI_NONE"
+#~ msgstr "神经元之间的神经纤维，在多细胞阶段可用。 要求增加生物体的脑力并进入到之后的阶段。"
+
+#, fuzzy
+#~ msgid "WIKI_OXYTOXY_SYNTHESIS"
+#~ msgstr "氧化毒素合成"
+
+#, fuzzy
+#~ msgid "WIKI_PHOTOSYNTHESIS"
+#~ msgstr "光合作用"
+
+#, fuzzy
+#~ msgid "WIKI_RUSTICYANIN"
+#~ msgstr "铁硫菌蓝蛋白"
+
+#, fuzzy
+#~ msgid "WIKI_SOCIETY_STAGE"
+#~ msgstr "社会阶段"
+
+#, fuzzy
+#~ msgid "WIKI_SPACE_STAGE"
+#~ msgstr "太空阶段"
+
+#, fuzzy
+#~ msgid "WIKI_THERMOSYNTHESIS"
+#~ msgstr "热合成"
+
+#, fuzzy
+#~ msgid "NO"
+#~ msgstr "无"
+
+#, fuzzy
+#~ msgid "YES"
+#~ msgstr "年"
+
+#, fuzzy
+#~ msgid "STAGES_BUTTON"
+#~ msgstr "下凡"
+
+#, fuzzy
+#~ msgid "EDITING"
+#~ msgstr "几丁质"
 
 #~ msgid "NOT_FOUND_CHUNK"
 #~ msgstr "错误：区块未找到"
@@ -7147,9 +8032,6 @@ msgstr "缩小"
 
 #~ msgid "SIXTEEN_TIMES"
 #~ msgstr "16x"
-
-#~ msgid "TOTAL_POPULATION_COLON"
-#~ msgstr "种群数量总数："
 
 #, fuzzy
 #~ msgid "QUESTION"
@@ -7281,9 +8163,6 @@ msgstr "缩小"
 
 #~ msgid "TYPE"
 #~ msgstr "类型："
-
-#~ msgid "VERSION"
-#~ msgstr "版本："
 
 #~ msgid "EDITOR_TUTORIAL_PATCH_TEXT"
 #~ msgstr ""
@@ -7445,10 +8324,6 @@ msgstr "缩小"
 #, fuzzy
 #~ msgid "AT"
 #~ msgstr "ATP"
-
-#, fuzzy
-#~ msgid "BRACKETLEFT"
-#~ msgstr "向左转"
 
 #, fuzzy
 #~ msgid "BRACKETRIGHT"

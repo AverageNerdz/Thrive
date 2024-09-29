@@ -105,6 +105,9 @@ public partial class LateMulticellularEditor : EditorBase<EditorAction, Multicel
     public Patch CurrentPatch => patchMapTab.CurrentPatch;
 
     [JsonIgnore]
+    public Patch? TargetPatch => patchMapTab.TargetPatch;
+
+    [JsonIgnore]
     public Patch? SelectedPatch => patchMapTab.SelectedPatch;
 
     [JsonIgnore]
@@ -118,7 +121,13 @@ public partial class LateMulticellularEditor : EditorBase<EditorAction, Multicel
 
     public void SendAutoEvoResultsToReportComponent()
     {
-        reportTab.UpdateAutoEvoResults(autoEvoSummary?.ToString() ?? "error", autoEvoExternal?.ToString() ?? "error");
+        if (autoEvoResults == null)
+        {
+            GD.PrintErr("Unexpectedly missing auto-evo results");
+            return;
+        }
+
+        reportTab.UpdateAutoEvoResults(autoEvoResults, autoEvoExternal?.ToString() ?? "error");
     }
 
     public override void SetEditorObjectVisibility(bool shown)
@@ -135,8 +144,6 @@ public partial class LateMulticellularEditor : EditorBase<EditorAction, Multicel
     public void OnCurrentPatchUpdated(Patch patch)
     {
         cellEditorTab.OnCurrentPatchUpdated(patch);
-
-        reportTab.UpdatePatchDetails(patch);
 
         UpdateBackgrounds(patch);
     }
@@ -236,7 +243,7 @@ public partial class LateMulticellularEditor : EditorBase<EditorAction, Multicel
 
             reportTab.UpdateTimeIndicator(CurrentGame.GameWorld.TotalPassedTime);
 
-            reportTab.UpdatePatchDetails(CurrentPatch, patchMapTab.SelectedPatch);
+            reportTab.UpdatePatchDetails(CurrentPatch, TargetPatch);
         }
 
         UpdateBackgrounds(CurrentPatch);
@@ -256,8 +263,6 @@ public partial class LateMulticellularEditor : EditorBase<EditorAction, Multicel
         {
             editorComponent.Init(this, fresh);
         }
-
-        patchMapTab.OnSelectedPatchChanged = OnSelectPatchForReportTab;
     }
 
     protected override void UpdateHistoryCallbackTargets(ActionHistory<EditorAction> actionHistory)
@@ -280,20 +285,19 @@ public partial class LateMulticellularEditor : EditorBase<EditorAction, Multicel
 
         if (run.Results == null)
         {
-            reportTab.UpdateAutoEvoResults(Localization.Translate("AUTO_EVO_FAILED"),
-                Localization.Translate("AUTO_EVO_RUN_STATUS") + " " + run.Status);
+            reportTab.DisplayAutoEvoFailure(run.Status);
         }
 
         base.OnEditorReady();
 
         reportTab.UpdateTimeIndicator(CurrentGame.GameWorld.TotalPassedTime);
 
-        if (autoEvoSummary != null && autoEvoExternal != null)
+        if (autoEvoResults != null && autoEvoExternal != null)
         {
-            reportTab.UpdateAutoEvoResults(autoEvoSummary.ToString(), autoEvoExternal.ToString());
+            reportTab.UpdateAutoEvoResults(autoEvoResults, autoEvoExternal.ToString());
         }
 
-        reportTab.UpdatePatchDetails(CurrentPatch, patchMapTab.SelectedPatch);
+        reportTab.UpdatePatchDetails(CurrentPatch, TargetPatch);
     }
 
     protected override void OnUndoPerformed()
@@ -354,6 +358,7 @@ public partial class LateMulticellularEditor : EditorBase<EditorAction, Multicel
             {
                 reportTab.Show();
                 SetEditorObjectVisibility(false);
+                reportTab.UpdatePatchDetailsIfNeeded(SelectedPatch ?? CurrentPatch);
                 break;
             }
 
@@ -457,11 +462,6 @@ public partial class LateMulticellularEditor : EditorBase<EditorAction, Multicel
         }
 
         base.Dispose(disposing);
-    }
-
-    private void OnSelectPatchForReportTab(Patch patch)
-    {
-        reportTab.UpdatePatchDetails(patch, patch);
     }
 
     private void UpdateBackgrounds(Patch patch)

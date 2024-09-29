@@ -56,6 +56,9 @@ public partial class MicrobeEditor : EditorBase<EditorAction, MicrobeStage>, IEd
     public Patch CurrentPatch => patchMapTab.CurrentPatch;
 
     [JsonIgnore]
+    public Patch? TargetPatch => patchMapTab.TargetPatch;
+
+    [JsonIgnore]
     public Patch? SelectedPatch => patchMapTab.SelectedPatch;
 
     protected override string MusicCategory => "MicrobeEditor";
@@ -89,7 +92,13 @@ public partial class MicrobeEditor : EditorBase<EditorAction, MicrobeStage>, IEd
 
     public void SendAutoEvoResultsToReportComponent()
     {
-        reportTab.UpdateAutoEvoResults(autoEvoSummary?.ToString() ?? "error", autoEvoExternal?.ToString() ?? "error");
+        if (autoEvoResults == null)
+        {
+            reportTab.ShowErrorAboutOldSave();
+            return;
+        }
+
+        reportTab.UpdateAutoEvoResults(autoEvoResults, autoEvoExternal?.ToString() ?? "error");
     }
 
     public override void SetEditorObjectVisibility(bool shown)
@@ -102,8 +111,6 @@ public partial class MicrobeEditor : EditorBase<EditorAction, MicrobeStage>, IEd
     public void OnCurrentPatchUpdated(Patch patch)
     {
         cellEditorTab.OnCurrentPatchUpdated(patch);
-
-        reportTab.UpdatePatchDetails(patch);
 
         cellEditorTab.UpdateBackgroundImage(patch.BiomeTemplate);
     }
@@ -152,7 +159,7 @@ public partial class MicrobeEditor : EditorBase<EditorAction, MicrobeStage>, IEd
 
             reportTab.UpdateTimeIndicator(CurrentGame.GameWorld.TotalPassedTime);
 
-            reportTab.UpdatePatchDetails(CurrentPatch, patchMapTab.SelectedPatch);
+            reportTab.UpdatePatchDetails(CurrentPatch, TargetPatch);
         }
 
         ProceduralDataCache.Instance.OnEnterState(MainGameState.MicrobeEditor);
@@ -178,8 +185,6 @@ public partial class MicrobeEditor : EditorBase<EditorAction, MicrobeStage>, IEd
         {
             editorComponent.Init(this, fresh);
         }
-
-        patchMapTab.OnSelectedPatchChanged = OnSelectPatchForReportTab;
     }
 
     protected override void OnEnterEditor()
@@ -210,8 +215,7 @@ public partial class MicrobeEditor : EditorBase<EditorAction, MicrobeStage>, IEd
 
         if (run.Results == null)
         {
-            reportTab.UpdateAutoEvoResults(Localization.Translate("AUTO_EVO_FAILED"),
-                Localization.Translate("AUTO_EVO_RUN_STATUS") + " " + run.Status);
+            reportTab.DisplayAutoEvoFailure(run.Status);
         }
         else
         {
@@ -227,12 +231,19 @@ public partial class MicrobeEditor : EditorBase<EditorAction, MicrobeStage>, IEd
 
         reportTab.UpdateTimeIndicator(CurrentGame.GameWorld.TotalPassedTime);
 
-        if (autoEvoSummary != null && autoEvoExternal != null)
+        if (autoEvoResults != null && autoEvoExternal != null)
         {
-            reportTab.UpdateAutoEvoResults(autoEvoSummary.ToString(), autoEvoExternal.ToString());
+            reportTab.UpdateAutoEvoResults(autoEvoResults, autoEvoExternal.ToString());
+        }
+        else if (autoEvoExternal != null)
+        {
+            // This condition should never happen, but I'll leave this print here in case anyone ever hits this and
+            // sends us a bug report -hhyyrylainen
+            GD.PrintErr("Somehow auto-evo results are null but external effects text exists");
+            reportTab.DisplayAutoEvoFailure("Only external effects is set but auto-evo results are missing");
         }
 
-        reportTab.UpdatePatchDetails(CurrentPatch, patchMapTab.SelectedPatch);
+        reportTab.UpdatePatchDetails(CurrentPatch, TargetPatch);
     }
 
     protected override void ElapseEditorEntryTime()
@@ -293,6 +304,7 @@ public partial class MicrobeEditor : EditorBase<EditorAction, MicrobeStage>, IEd
             {
                 reportTab.Show();
                 SetEditorObjectVisibility(false);
+                reportTab.UpdatePatchDetailsIfNeeded(SelectedPatch ?? CurrentPatch);
                 break;
             }
 
@@ -353,10 +365,5 @@ public partial class MicrobeEditor : EditorBase<EditorAction, MicrobeStage>, IEd
 
         CurrentGame.GameWorld.UnlockProgress.UnlockAll = true;
         cellEditorTab.UnlockAllOrganelles();
-    }
-
-    private void OnSelectPatchForReportTab(Patch patch)
-    {
-        reportTab.UpdatePatchDetails(patch, patch);
     }
 }
